@@ -10,4 +10,6 @@ public interface ContactRepository {
 	 */
 	List<Contact> findAll();
 
+	Contact save(Contact contact);
+
 }

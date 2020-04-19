@@ -28,5 +28,14 @@ public class ContactServiceImpl implements ContactService{
 		// TODO Auto-generated method stub
 		return contactRepository.findAll();
 	}
+
+	/**
+	 * Lưu thông tin product
+	 */
+	@Override
+	public Contact save(Contact contact) {
+		
+		return contactRepository.save(contact);
+	}
 	
 }

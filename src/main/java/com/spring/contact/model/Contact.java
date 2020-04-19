@@ -29,6 +29,7 @@ public class Contact {
 
 	public Contact() {
 		super();
+		this.setId(0);
 	}
 
 	public Contact(String firstName, String lastName, boolean gender, String email, String phone) {

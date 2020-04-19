@@ -24,7 +24,7 @@
 </head>
 <body>
 	<div class="container">
-		 <form:form action="${pageContext.request.contextPath}/contact" modelAttribute="contact" method="POST" class="form-horizontal" role="form">
+		 <form:form action="${pageContext.request.contextPath}/contact/processCreateNewContact" modelAttribute="contact" method="POST" class="form-horizontal" role="form">
             <div class="form-group">
                 <legend>Add new contact</legend>
             </div>
@@ -65,20 +65,20 @@
                 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Email: </label>
 
                 <div class="col-sm-6">                           
-                    <input type="text" name="" id="input" class="form-control" value="" required="required">
+                    <form:input path="email" class="form-control" required="required"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Phone: </label>
 
                 <div class="col-sm-6">                           
-                    <input type="text" name="" id="input" class="form-control" value="" required="required">
+                    <form:input path="phone" class="form-control" required="required"/>
                 </div>
             </div>
             
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-6">
-                  <a type="submit" class="btn btn-success" style="margin: 20px;">Save</a>
+                  <button type="submit" class="btn btn-success" style="margin: 20px;">Save</button>
                   <a type="button" class="btn btn-danger">Cancel</a>
                 </div>
             </div>

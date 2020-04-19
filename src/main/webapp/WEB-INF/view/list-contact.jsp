@@ -45,7 +45,7 @@
 							<td>${item.phone}</td>
 							<td>
 								 <button type="submit" class="btn btn-warning">Edit</button>
-								 <button type="submit" class="btn btn-danger">Delete</button>
+								 <button type="button" class="btn btn-danger">Delete</button>
 							</td>
 						</tr>
 					</c:forEach>

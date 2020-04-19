@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.spring.contact.model.Contact;
@@ -55,5 +57,25 @@ public class ContactController {
 		
 		//trả về form thêm contact
 		return "contact-form";
+	}
+	
+	/**
+	 * Xử lý thêm mới contact
+	 * @param contact
+	 * @return
+	 */
+	@PostMapping("/processCreateNewContact")
+	public String processCreateNewContact(@ModelAttribute("contact") Contact contact) {
+		//Nếu contact tồn tại
+		if(contact!=null) {
+			//lưu contact vào database
+			Contact contactSaved = contactService.save(contact);
+			if(contactSaved!=null) {
+				return "redirect:/contact/list";
+			}
+		}
+		return "redirect:/contact/addNewContact";
+		
+		
 	}
 }
