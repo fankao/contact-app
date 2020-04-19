@@ -14,4 +14,6 @@ public interface ContactRepository {
 
 	Contact findById(long id);
 
+	void deleteById(long id);
+
 }

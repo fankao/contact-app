@@ -46,5 +46,14 @@ public class ContactServiceImpl implements ContactService{
 		// TODO Auto-generated method stub
 		return contactRepository.findById(id);
 	}
+
+	/**
+	 * Xoá contact
+	 */
+	@Override
+	public void deleteById(long id) {
+		contactRepository.deleteById(id);
+		
+	}
 	
 }

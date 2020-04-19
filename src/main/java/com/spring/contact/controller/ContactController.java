@@ -89,4 +89,15 @@ public class ContactController {
 		}
 		return "redirect:/contact/addNewContact";
 	}
+	
+	/**
+	 * Xoá contact
+	 * @param id
+	 * @return
+	 */
+	@GetMapping("/delete/{id}")
+	public String processDeleteContact(@PathVariable("id")long id) {
+		contactService.deleteById(id);
+		return "redirect:/contact/list";
+	}
 }

@@ -51,4 +51,12 @@ public class ContactRepositoryImpl implements ContactRepository {
 		return em.find(Contact.class, id);
 	}
 
+	/**
+	 * Xoá contact theo id
+	 */
+	@Override
+	public void deleteById(long id) {
+		em.createQuery("DELETE FROM Contact con WHERE con.id =: id").setParameter("id", id).executeUpdate();	
+	}
+
 }
