@@ -60,24 +60,6 @@ public class ContactController {
 		return "contact-form";
 	}
 	
-	/**
-	 * Xử lý thêm mới contact
-	 * @param contact
-	 * @return
-	 */
-	@PostMapping("/processCreateNewContact")
-	public String processCreateNewContact(@ModelAttribute("contact") Contact contact) {
-		//Nếu contact tồn tại
-		if(contact!=null) {
-			//lưu contact vào database
-			Contact contactSaved = contactService.save(contact);
-			if(contactSaved!=null) {
-				return "redirect:/contact/list";
-			}
-		}
-		return "redirect:/contact/addNewContact";
-	}
-	
 	@GetMapping("/edit/{id}")
 	public String showFormForUpdate(@PathVariable("id") long id,Model model) {
 		//Tìm contact theo id
@@ -88,5 +70,23 @@ public class ContactController {
 		
 		//trả về view
 		return "contact-form";
+	}
+	
+	/**
+	 * Xử lý submit form
+	 * @param contact
+	 * @return
+	 */
+	@PostMapping("/processForm")
+	public String processCreateNewContact(@ModelAttribute("contact") Contact contact) {
+		//Nếu contact tồn tại
+		if(contact!=null) {
+			//lưu contact vào database
+			Contact contactSaved = contactService.save(contact);
+			if(contactSaved!=null) {
+				return "redirect:/contact/list";
+			}
+		}
+		return "redirect:/contact/addNewContact";
 	}
 }

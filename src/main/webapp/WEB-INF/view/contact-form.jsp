@@ -24,7 +24,9 @@
 </head>
 <body>
 	<div class="container">
-		 <form:form action="${pageContext.request.contextPath}/contact/processCreateNewContact" modelAttribute="contact" method="POST" class="form-horizontal" role="form">
+		 <form:form action="${pageContext.request.contextPath}/contact/processForm" modelAttribute="contact" method="POST" class="form-horizontal" role="form">
+		 	<form:hidden path="id"/>
+		 	
             <div class="form-group">
                 <legend>${ contact.id == 0 ? 'Add new contact': 'Update contact' }</legend>
             </div>
