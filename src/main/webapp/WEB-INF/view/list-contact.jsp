@@ -44,14 +44,41 @@
 							<td>${item.email}</td>
 							<td>${item.phone}</td>
 							<td>
-								 <button type="submit" class="btn btn-warning">Edit</button>
-								 <button type="button" class="btn btn-danger">Delete</button>
+								 <a type="button" class="btn btn-warning" href="${pageContext.request.contextPath}/contact/edit/${item.id}">Edit</a>
+								 <a type="button" class="btn btn-danger" data-toggle="modal" href='#modal-id'  onclick="getDeleteLink('${pageContext.request.contextPath}/contact/delete/${item.id}')">Delete</a>
 							</td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</section>
+		
+		<!-- Confirm delete modal -->
+		<div class="modal fade" id="modal-id">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Delete this contact</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h1>
+                            Confirm delete this contact?
+                        </h1>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <a id = "confirmButton" type="button" class="btn btn-primary">Confirm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</div>
+	<script type="text/javascript">
+		function getDeleteLink(link){
+			 document.getElementById("confirmButton").href = link;
+		}
+		
+	</script>
 </body>
 </html>

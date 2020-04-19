@@ -37,5 +37,14 @@ public class ContactServiceImpl implements ContactService{
 		
 		return contactRepository.save(contact);
 	}
+
+	/**
+	 * Tìm Contact theo id
+	 */
+	@Override
+	public Contact findById(long id) {
+		// TODO Auto-generated method stub
+		return contactRepository.findById(id);
+	}
 	
 }

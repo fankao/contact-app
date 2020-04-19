@@ -43,4 +43,12 @@ public class ContactRepositoryImpl implements ContactRepository {
 		return null;
 	}
 
+	/**
+	 * tìm contact theo id
+	 */
+	@Override
+	public Contact findById(long id) {
+		return em.find(Contact.class, id);
+	}
+
 }

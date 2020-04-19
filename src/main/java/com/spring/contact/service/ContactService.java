@@ -12,4 +12,6 @@ public interface ContactService {
 
 	Contact save(Contact contact);
 
+	Contact findById(long id);
+
 }

@@ -26,7 +26,7 @@
 	<div class="container">
 		 <form:form action="${pageContext.request.contextPath}/contact/processCreateNewContact" modelAttribute="contact" method="POST" class="form-horizontal" role="form">
             <div class="form-group">
-                <legend>Add new contact</legend>
+                <legend>${ contact.id == 0 ? 'Add new contact': 'Update contact' }</legend>
             </div>
             <div class="form-group">
                 <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> First name: </label>

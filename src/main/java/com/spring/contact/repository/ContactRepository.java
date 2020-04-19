@@ -12,4 +12,6 @@ public interface ContactRepository {
 
 	Contact save(Contact contact);
 
+	Contact findById(long id);
+
 }
