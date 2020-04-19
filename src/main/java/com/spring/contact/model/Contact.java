@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "contact")
@@ -85,6 +86,15 @@ public class Contact {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	
+	/**
+	 * Hiện giới tính
+	 * @return
+	 */
+	@Transient
+	public String showGender() {
+		return this.isGender() == true? "Male" : "Female";
 	}
 
 }

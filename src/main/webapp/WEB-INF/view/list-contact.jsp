@@ -21,8 +21,8 @@
 		<header>
 			<h1>List contact</h1>
 		</header>
-		<button type="button" class="btn btn-info"
-			style="margin-bottom: 10px;">Add new contact</button>
+		<a type="button" class="btn btn-info" href="${pageContext.request.contextPath}/contact/addNewContact"
+			style="margin-bottom: 10px;">Add new contact</a>
 		<section>
 			<table class="table table-bordered table-hover">
 				<thead>
@@ -40,7 +40,7 @@
 						<tr>
 							<td>${item.firstName}</td>
 							<td>${item.lastName}</td>
-							<td>${item.gender == true ? Male : Femail}</td>
+							<td>${item.showGender()}</td>
 							<td>${item.email}</td>
 							<td>${item.phone}</td>
 							<td>

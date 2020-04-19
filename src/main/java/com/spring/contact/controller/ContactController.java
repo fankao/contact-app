@@ -38,4 +38,22 @@ public class ContactController {
 		//trả về view
 		return "list-contact";
 	}
+	
+	
+	/**
+	 * Hiển thị form tạo contact
+	 * @param model
+	 * @return
+	 */
+	@GetMapping("/addNewContact")
+	public String showFormForCreate(Model model) {
+		//Tạo contact
+		Contact contact = new Contact();
+		
+		//đưa contact vào model
+		model.addAttribute("contact",contact);
+		
+		//trả về form thêm contact
+		return "contact-form";
+	}
 }
